@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Compiling Java files..."
+                sh '''
+                rm -rf out
+                mkdir out
+                javac -d out *.java
+                '''
+            }
+        }
+
+        stage('Run') {
+            steps {
+                echo "Running Java Console Shopping System..."
+                sh 'java -cp out MainApp1'
+            }
+        }
+    }
+}
