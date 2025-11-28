@@ -1,4 +1,4 @@
-package Day7.Task;
+
 
 import java.util.HashMap;
 
@@ -26,4 +26,5 @@ public class BLClass {
         }
     }
 }
+
 
