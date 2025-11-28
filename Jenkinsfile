@@ -13,7 +13,7 @@ pipeline {
 
         stage('Run') {
             steps {
-                bat 'java MainApp1'
+                echo 'Skipping program run (requires user input)'
             }
         }
     }
