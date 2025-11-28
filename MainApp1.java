@@ -1,4 +1,4 @@
-package Day7.Task;
+
 import java.util.HashMap;
 import java.util.Scanner;
 public class MainApp1 {
@@ -98,3 +98,4 @@ public class MainApp1 {
             System.out.println("Logged out");
         }
     }
+
