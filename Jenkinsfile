@@ -2,18 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Debug') {
             steps {
-                bat '''
-                javac *.java
-                '''
+                bat 'dir'
             }
         }
+
+        stage('Build') {
+            steps {
+                bat 'javac *.java'
+            }
+        }
+
         stage('Run') {
             steps {
-                bat '''
-                java MainApp1
-                '''
+                bat 'java MainApp1'
             }
         }
     }
