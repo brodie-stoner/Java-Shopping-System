@@ -2,14 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Debug') {
             steps {
-                bat 'gradlew.bat build'
+                bat 'dir'
             }
         }
-        stage('Test') {
+
+        stage('Build') {
             steps {
-                bat 'gradlew.bat test'
+                bat 'javac *.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                bat 'java MainApp1'
             }
         }
     }
