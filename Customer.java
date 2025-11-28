@@ -1,4 +1,4 @@
-package Day7.Task;
+
 
 public class Customer {
     public String getName() {
