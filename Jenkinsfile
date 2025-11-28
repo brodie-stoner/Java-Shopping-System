@@ -2,15 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Debug') {
-            steps {
-                bat 'dir'
-            }
-        }
-
         stage('Build') {
             steps {
-                bat 'javac *.java'
+                bat '''
+                del *.class 2>nul
+                javac *.java
+                '''
             }
         }
 
