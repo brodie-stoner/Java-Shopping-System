@@ -4,12 +4,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'gradlew.bat build'
+                bat '''
+                javac *.java
+                '''
             }
         }
-        stage('Test') {
+        stage('Run') {
             steps {
-                bat 'gradlew.bat test'
+                bat '''
+                java MainApp1
+                '''
             }
         }
     }
